@@ -12,6 +12,8 @@ public class PlayerLogic : MonoBehaviour {
 	// HEALTH
 	public int maxHealth;
 	public int health;
+
+	public int scores;
 	
 	// UI PLAYER
 //	public Text textPlayerHealth;
@@ -32,6 +34,8 @@ public class PlayerLogic : MonoBehaviour {
 	public Canvas GameOver;
 	//
 	public Text Vida;
+
+	public Text Score;
 	
 	// Use this for initialization
 	void Start () {
@@ -155,6 +159,17 @@ public class PlayerLogic : MonoBehaviour {
 
 		Vida.text = health.ToString ();
 
+	}
+	public void setPoints(float points){
+		// PARA QUITARLE VIDA EL DAMAGE SE PASA A INT
+		scores += int.Parse (
+			// SE TIENE QUE CONVERTIR ANTES A STRING
+			points.ToString ());
+		
+		// INICIALIZAR EL TEMPORIZADOR
+		
+		Score.text = scores.ToString ();
+		
 	}
 	
 	public void setDie(){
