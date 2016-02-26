@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: fda4dd4d45327bb4999592c0362e43f1
+timeCreated: 1454579719
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - BorderBlockPrefab: {fileID: 100000, guid: 4b393ca22061d704e95b42cc48cc09df, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

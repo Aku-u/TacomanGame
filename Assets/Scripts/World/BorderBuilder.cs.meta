@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 05548ecca78c3ec4b92940b13aad24ff
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - BorderBlockPrefab: {fileID: 100000, guid: 4b393ca22061d704e95b42cc48cc09df, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
