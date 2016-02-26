@@ -145,6 +145,17 @@ public class PlayerLogic : MonoBehaviour {
 			state = PlayerStates.DAMAGE;
 		}
 	}
+	public void setLife(float life){
+		// PARA QUITARLE VIDA EL DAMAGE SE PASA A INT
+		health += int.Parse (
+			// SE TIENE QUE CONVERTIR ANTES A STRING
+			life.ToString ());
+		
+		// INICIALIZAR EL TEMPORIZADOR
+
+		Vida.text = health.ToString ();
+
+	}
 	
 	public void setDie(){
 		

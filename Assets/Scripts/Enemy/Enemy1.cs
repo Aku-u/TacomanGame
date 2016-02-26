@@ -5,6 +5,9 @@ public class Enemy1 : MonoBehaviour {
 	public float health;
 	public float maxHealt;
 
+	public GameObject HealthCont;
+	public GameObject Coins;
+	public float num;
 	public Transform target; 
 	public GameObject trans;
 
@@ -41,6 +44,16 @@ public class Enemy1 : MonoBehaviour {
 		// CUANDO VIDA LLEGA A CERO --> DIE()
 		if (health <= 0) {
 		
+			num= Random.Range(0,100);
+			if(num >= 80){
+
+				Instantiate (HealthCont, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
+
+			}
+			else if(num <= 30){
+				Instantiate (Coins, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
+
+			}
 			if (enemy.Length == 1) {
 				Debug.Log("Solo quedas tuu");
 
