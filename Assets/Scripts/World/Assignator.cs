@@ -24,7 +24,7 @@ public class Assignator : MonoBehaviour {
 				
 			if (Num <= NextLevel.levelDificulty-2) {
 
-					Instantiate (Enemy, new Vector3 (transform.position.x, transform.position.y, 0), Quaternion.identity);
+					Instantiate (Enemy, new Vector3 (transform.position.x, transform.position.y, -0.36f), Quaternion.identity);
 			}
 		}
 		if (Num >= 95)

@@ -8,10 +8,17 @@ public class Coin : MonoBehaviour {
 
 	public GameObject Player;
 
+	public GameObject fxs;
+	public AudioClip impact;
+	AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
 	
 		Player = GameObject.FindGameObjectWithTag("Player");
+		fxs = GameObject.FindGameObjectWithTag("FX");
+
+		audio = fxs.transform.GetComponent<AudioSource>();
 
 	}
 	
@@ -20,8 +27,10 @@ public class Coin : MonoBehaviour {
 		if (other.tag == "Player") {
 		
 			Player.transform.GetComponent<PlayerLogic> ().setPoints(Points);
+			audio.PlayOneShot(impact, 1.5F);
 
 			Destroy(this.gameObject);
+
 		}
 
 

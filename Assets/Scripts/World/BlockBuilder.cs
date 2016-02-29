@@ -8,7 +8,7 @@ public class BlockBuilder : MonoBehaviour
 	public string levelName;
 	public GameObject groundSprite;
 	public int numberOfGroundTilesToSpawn = 5;
-	public int OffsetDistance = 2;
+	public int OffsetDistance = 1;
 	public bool generateBorder = true;
 	public bool generateProp = true;
 

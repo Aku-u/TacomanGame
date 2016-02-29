@@ -18,6 +18,8 @@ public class Enemy1 : MonoBehaviour {
 	public GameObject[] enemy;
 
 	public GameObject nextLevel;
+
+	public GameObject Enemy;
 	// Use this for initialization
 	void Start () {
 	
@@ -60,7 +62,7 @@ public class Enemy1 : MonoBehaviour {
 				Instantiate (nextLevel, new Vector3(transform.position.x, transform.position.y,0), Quaternion.identity);
 			
 			}
-			Destroy(this.gameObject);
+			Destroy(Enemy);
 		}
 
 	}
