@@ -42,7 +42,7 @@ public class Enemy1 : MonoBehaviour {
 	public void setDamage(float damage){
 
 		health -= damage;
-		enemy = GameObject.FindGameObjectsWithTag("Enemy");
+		enemy = GameObject.FindGameObjectsWithTag("Enemy1");
 		// CUANDO VIDA LLEGA A CERO --> DIE()
 		if (health <= 0) {
 		
