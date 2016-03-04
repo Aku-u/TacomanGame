@@ -15,9 +15,7 @@ public class PlayerLogic : MonoBehaviour {
 
 	public int scores;
 	
-	// UI PLAYER
-//	public Text textPlayerHealth;
-//	public Image imagePlayerDamage;
+
 	
 	// TEMPORIZADORES DE ESTADO
 	public float tempDamage;
@@ -36,7 +34,7 @@ public class PlayerLogic : MonoBehaviour {
 
 
 	//
-	public Text Vida;
+
 
 	public Text Score;
 	public GameObject VidaImage;
@@ -115,34 +113,23 @@ public class PlayerLogic : MonoBehaviour {
 		ActiveControlPlayer ();
 		
 		health = maxHealth;
-
-		Vida.text = health.ToString ();
-		// EL TEXTO DEL INTERFAZ, SE PASA HEALTH (INT) A STRING UTILIZANDO
-		// ToString()
-		//		textPlayerHealth.text = health.ToString ();
-		
-		// DESACTIVAR IMAGEN DE DAÑO
-//		imagePlayerDamage.enabled = false;
 		
 		state = PlayerStates.AWAKE;
 	}
 	
 	public void setActive(){
-		// DESACTIVAR IMAGEN DE DAÑO
-//		imagePlayerDamage.enabled = false;
-		Vida.text = health.ToString ();
+		// DESACTIVAR IMAGEN DE DAÑ
+
 		state = PlayerStates.ACTIVE;
 	}
 	
 	public void setDamage(float damage){
 		// PARA QUITARLE VIDA EL DAMAGE SE PASA A INT
-		health -= int.Parse (
-			// SE TIENE QUE CONVERTIR ANTES A STRING
-			damage.ToString ());
+		health -= int.Parse (damage.ToString ());
 		
-		// INICIALIZAR EL TEMPORIZADOR
+
 		temp = tempDamage;
-		Vida.text = health.ToString ();
+
 
 		VidaImage.GetComponent<ImageHealth> ().SetImage (health);
 		if (health <= 0) {
@@ -160,10 +147,10 @@ public class PlayerLogic : MonoBehaviour {
 		health += int.Parse (
 			// SE TIENE QUE CONVERTIR ANTES A STRING
 			life.ToString ());
-		
+		VidaImage.GetComponent<ImageHealth> ().SetImage (health);
 		// INICIALIZAR EL TEMPORIZADOR
 
-		Vida.text = health.ToString ();
+
 
 	}
 	public void setPoints(float points){
@@ -179,18 +166,11 @@ public class PlayerLogic : MonoBehaviour {
 	}
 	
 	public void setDie(){
-		
-		// Desactivamos los controles del player
-		DesActiveControlPlayer ();
 
-		// VIDA A CERO
 		health = 0;
-		Vida.text = health.ToString ();
-		// EL TEXTO DEL INTERFAZ, SE PASA HEALTH (INT) A STRING UTILIZANDO
-		// ToString()
-		//		textPlayerHealth.text = "";
+
 		Gameover.enabled = true;
-		// LLAMAMOS A GAMEOVER EN GAMELOGIC
+
 		gameLogic.setGameOver ();
 		
 		state = PlayerStates.DIE;
@@ -198,31 +178,19 @@ public class PlayerLogic : MonoBehaviour {
 	
 	public void setWin(){
 		
-		// Desactivamos los controles del player
+
 		DesActiveControlPlayer ();
 		
-		// VIDA A CERO
+
 		health = 0;
-		// EL TEXTO DEL INTERFAZ, SE PASA HEALTH (INT) A STRING UTILIZANDO
-		// ToString()
-		//textPlayerHealth.text = "";
-		
-		// LLAMAMOS A VICTORY EN GAMELOGIC
+
 		gameLogic.setVictory ();
 		
 		state = PlayerStates.WIN;
 	}
 	public void setGood(){
 		
-		// Desactivamos los controles del player
 
-	
-		//health = 1000000;
-		// EL TEXTO DEL INTERFAZ, SE PASA HEALTH (INT) A STRING UTILIZANDO
-		// ToString()
-		//textPlayerHealth.text = "";
-		
-		// LLAMAMOS A VICTORY EN GAMELOGIC
 		gameLogic.setGood ();
 		
 		state = PlayerStates.GOOD;
