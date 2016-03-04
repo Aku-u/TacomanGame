@@ -32,11 +32,15 @@ public class PlayerLogic : MonoBehaviour {
 	public Button Restart;
 	public Button Quit;
 	public Canvas GameOver;
+
+
+
 	//
 	public Text Vida;
 
 	public Text Score;
-	
+	public GameObject VidaImage;
+
 	// Use this for initialization
 	void Start () {
 		// OBTENGO LOS CONTROLLERS DE LOS DIFERENTES COMPONENTES
@@ -139,6 +143,8 @@ public class PlayerLogic : MonoBehaviour {
 		// INICIALIZAR EL TEMPORIZADOR
 		temp = tempDamage;
 		Vida.text = health.ToString ();
+
+		VidaImage.GetComponent<ImageHealth> ().SetImage (health);
 		if (health <= 0) {
 			Gameover.enabled = true;
 			Restart.enabled = true;
