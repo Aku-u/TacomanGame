@@ -11,13 +11,18 @@ public class Aim : MonoBehaviour {
 
 	public Transform RenderGun;
 
+
+
 	public bool facingRight;
 
 	public float rotationz;
 
 	public Vector2 newScaleGun;
 	public Vector2 newScaleTaco;
+
+
 	void Start(){
+
 
 		facingRight = true;
 	}
@@ -47,9 +52,16 @@ public class Aim : MonoBehaviour {
 		}*/
 		rotationz = Trans.eulerAngles.z;
 
-		if ((rotationz >= 180)&&facingRight) Flip();
-		else if (rotationz <= 180 && !facingRight) Flip ();
+		if ((rotationz >= 180) && facingRight) {
 
+			Flip ();
+
+		
+		} else if (rotationz <= 180 && !facingRight) {
+
+			Flip ();
+
+		} 
 	}
 
 	public void Flip(){
@@ -65,8 +77,11 @@ public class Aim : MonoBehaviour {
 		newScaleTaco.x *= -1;
 		
 		RenderTacoman.localScale = newScaleTaco;
-		
+
+
+
 		facingRight = !facingRight;
+
 
 
 
