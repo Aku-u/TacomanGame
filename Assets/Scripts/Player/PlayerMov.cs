@@ -3,7 +3,8 @@ using System.Collections;
 
 
 public class PlayerMov : MonoBehaviour {
-	public float move;
+	public float moveX;
+	public float moveY;
 	public float speed;
 
 	public Rigidbody2D rigidBody2D;
@@ -16,13 +17,13 @@ public class PlayerMov : MonoBehaviour {
 	
 
 				
-		move = Input.GetAxis ("Vertical");
+		moveY = Input.GetAxis ("Vertical");
 		// Movement
-		rigidBody2D.velocity = new Vector2 (move * speed, rigidBody2D.velocity.y);
+		rigidBody2D.velocity = new Vector2 (moveY * speed, rigidBody2D.velocity.y);
 
-		move = Input.GetAxis ("Horizontal");
+		moveX = Input.GetAxis ("Horizontal");
 		// Movement
-		rigidBody2D.velocity = new Vector2 (move * speed, rigidBody2D.velocity.x);
+		rigidBody2D.velocity = new Vector2 (moveX * speed, rigidBody2D.velocity.x);
 
 
 	
