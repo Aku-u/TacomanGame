@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 7c502ac80ac5349d69c257280b8336b1
-timeCreated: 1458039094
+timeCreated: 1458838481
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: enviro-japon_01-2_0
     21300002: enviro-japon_01-2_1
+    21300004: enviro-japon_01-2_2
+    21300006: enviro-japon_01-2_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,7 +58,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 0
         width: 256
         height: 256
       alignment: 0
@@ -67,6 +69,26 @@ TextureImporter:
         serializedVersion: 2
         x: 256
         y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enviro-japon_01-2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enviro-japon_01-2_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
         width: 256
         height: 256
       alignment: 0

@@ -11,6 +11,7 @@ public class Aim : MonoBehaviour {
 
 	public Transform RenderGun;
 
+	public Transform RenderRay;
 
 
 	public bool facingRight;
@@ -20,6 +21,7 @@ public class Aim : MonoBehaviour {
 	public Vector2 newScaleGun;
 	public Vector2 newScaleTaco;
 
+	public Vector2 newSacaleRay;
 
 	void Start(){
 
@@ -78,6 +80,11 @@ public class Aim : MonoBehaviour {
 		
 		RenderTacoman.localScale = newScaleTaco;
 
+		newSacaleRay = RenderRay.localScale;
+		
+		newSacaleRay.x *= -1;
+		
+		RenderRay.localScale = newSacaleRay;
 
 
 		facingRight = !facingRight;
