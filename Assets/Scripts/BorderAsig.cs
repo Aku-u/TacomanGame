@@ -10,9 +10,15 @@ public class BorderAsig : MonoBehaviour {
 	public bool Right;
 
 	private bool ADown;
+	private bool AUp;
+	private bool ALeft;
+	private bool ARight;
 
 
 	public GameObject Shadow;
+	public GameObject LeftG;
+	public GameObject RightG;
+		
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +33,16 @@ public class BorderAsig : MonoBehaviour {
 			ShadownIntantiate();
 		
 		}
+		if (Left && !ALeft) {
+			
+			LeftGIntantiate();
+			
+		}
+		if (Right && !ARight) {
+			
+			RightGIntantiate();
+			
+		}
 
 
 	}
@@ -34,5 +50,15 @@ public class BorderAsig : MonoBehaviour {
 
 		Instantiate (Shadow, transform.position, transform.rotation);
 		ADown = true;
+	}
+	void LeftGIntantiate(){
+		
+		Instantiate (LeftG, transform.position, Quaternion.Euler(new Vector3(0, 0, 270)));
+		ALeft = true;
+	}
+	void RightGIntantiate(){
+		
+		Instantiate (RightG, transform.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+		ARight = true;
 	}
 }
