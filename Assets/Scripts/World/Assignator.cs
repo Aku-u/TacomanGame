@@ -19,7 +19,7 @@ public class Assignator : MonoBehaviour {
 		Num = Random.Range (1, 100);
 		
 		Debug.Log(Num);
-		distance =Vector2.Distance(transform.position,player.transform.position);
+		distance =Vector2.Distance(transform.position,Vector2.zero);
 		if (distance >= 7.5) {
 				
 			if (Num <= NextLevel.levelDificulty-2) {
