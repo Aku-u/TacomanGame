@@ -37,21 +37,7 @@ public class Aim : MonoBehaviour {
 
 		transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
 
-		/*
-		if (move > 0 && facingRight) Flip ();
-		else if (move < 0 && !facingRight) Flip ();
 
-
-		if (Trans.localRotation.eulerAngles >= new Vector3(180,0,0)) {
-		
-			if(RenderTacoman.transform.localScale.x >= 0){
-
-				RenderTacoman.transform.localScale.x *= -1;
-				RenderGun.transform.localScale.x *= -1;
-			}
-
-		
-		}*/
 		rotationz = Trans.eulerAngles.z;
 
 		if ((rotationz >= 180) && facingRight) {
