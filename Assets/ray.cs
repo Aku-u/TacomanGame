@@ -35,7 +35,7 @@ public class ray : MonoBehaviour {
 	void Raycasting(){
 
 
-		Debug.DrawRay (Sourcebullet.position , Raycaster.position - transform.position );
+		Debug.DrawRay (Sourcebullet.position , Raycaster.position - transform.position);
 
 		hits = Physics2D.RaycastAll(Sourcebullet.position , Raycaster.position - transform.position,Mathf.Infinity);
 
@@ -54,15 +54,14 @@ public class ray : MonoBehaviour {
 				other = hit.transform.position;
 
 			}
+
+
+
 			if(Spooted &&(hit.transform.tag == "Detection")){
 
-				if((Vector2.Distance(Sourcebullet.position, enemy) <= Vector2.Distance(Sourcebullet.position, other))&&(hit.transform.tag == "Enemy")){
 
-					Spooted = true;
-				}
-				else {
 					Spooted = false;
-				}
+
 
 			}
 			if((Vector2.Distance(Sourcebullet.position, enemy) <= Vector2.Distance(Sourcebullet.position, other))&&(hit.transform.tag == "Enemy")){
@@ -72,6 +71,7 @@ public class ray : MonoBehaviour {
 				Spooted = true;
 
 				Debug.Log("esta mas cerca");
+			
 			}
 
 
