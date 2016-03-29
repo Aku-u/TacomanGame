@@ -8,9 +8,12 @@ public class ray : MonoBehaviour {
 	public RaycastHit2D[] hits;
 
 
+	private bool detection1;
+
 	public bool Spooted;
 
-
+	public int counter;
+	public int counter2;
 	public GameObject enemyG;
 
 	public Vector2 enemy;
@@ -25,11 +28,22 @@ public class ray : MonoBehaviour {
 	{
 		Raycasting ();
 
+
+
+	}
+
+	public void Now(){
+	
+
+		Spooted = true;
+	
 	}
 	public void AdDamage(){
 	
 		Debug.Log("Tocado");
 		Destroy (enemyG);
+
+
 	
 	}
 	void Raycasting(){
@@ -47,6 +61,8 @@ public class ray : MonoBehaviour {
 			{
 
 				enemy = hit.transform.position;
+
+
 			}
 			if (hit.transform.tag == "Border")
 			{
@@ -54,9 +70,31 @@ public class ray : MonoBehaviour {
 				other = hit.transform.position;
 
 			}
+			/*if(hit.transform.tag =="Detection"){
+
+				Debug.Log("Collsiion");
+				foreach (RaycastHit2D hit2 in hits)
+				{
 
 
+					if((Vector2.Distance(Sourcebullet.position, enemy) <= Vector2.Distance(Sourcebullet.position, other))&&(hit2.transform.tag == "Enemy")){
 
+
+						Debug.Log ("Now");
+
+						counter++;
+
+						Spooted = true;
+
+						//Now ();
+
+					}
+
+				}
+
+
+			}
+*/
 			if(Spooted &&(hit.transform.tag == "Detection")){
 
 
