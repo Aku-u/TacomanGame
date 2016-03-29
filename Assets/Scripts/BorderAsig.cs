@@ -18,6 +18,7 @@ public class BorderAsig : MonoBehaviour {
 	public GameObject Shadow;
 	public GameObject LeftG;
 	public GameObject RightG;
+	public GameObject UpG;
 		
 
 	// Use this for initialization
@@ -43,6 +44,11 @@ public class BorderAsig : MonoBehaviour {
 			RightGIntantiate();
 			
 		}
+		if (Up && !AUp) {
+			
+			UpGIntantiate();
+			
+		}
 
 
 	}
@@ -60,5 +66,10 @@ public class BorderAsig : MonoBehaviour {
 		
 		Instantiate (RightG, transform.position, Quaternion.Euler(new Vector3(0, 0, 90)));
 		ARight = true;
+	}
+	void UpGIntantiate(){
+		
+		Instantiate (UpG, transform.position, Quaternion.Euler(new Vector3(0, 0, 270)));
+		AUp = true;
 	}
 }
