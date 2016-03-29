@@ -6,6 +6,7 @@ public class Assignator : MonoBehaviour {
 	public float Num;
 
 	public GameObject Enemy;
+	public GameObject Enemy2;
 
 	public GameObject Cactus;
 
@@ -24,7 +25,9 @@ public class Assignator : MonoBehaviour {
 				
 			if (Num <= NextLevel.levelDificulty-2) {
 
-					Instantiate (Enemy, new Vector3 (transform.position.x, transform.position.y, -0.36f), Quaternion.identity);
+				Num = Random.Range (1, 3);
+				if(Num == 1)	Instantiate (Enemy, new Vector3 (transform.position.x, transform.position.y, -0.36f), Quaternion.identity);
+				if(Num == 2)	Instantiate (Enemy2, new Vector3 (transform.position.x, transform.position.y, -0.36f), Quaternion.identity);
 			}
 		}
 		if (Num >= 95)

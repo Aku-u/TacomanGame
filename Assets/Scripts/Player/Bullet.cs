@@ -40,5 +40,19 @@ public class Bullet : MonoBehaviour {
 
 
 		}
+		if (other.tag == "EnemyRay") {
+			
+			other.transform.GetComponent<EnemyRay>().setDamage(damage);
+			// LA EXPLOSION SE DESTRUYE A LOS 0.5SEG
+			Debug.Log ("Enemy");
+			
+			
+			Destroy (gameObject);
+			
+			
+			// DESTRUIR BALA
+			
+			
+		}
 	}
 }

@@ -5,11 +5,14 @@ public class EnemyRay : MonoBehaviour {
 
 	public float health;
 	public float maxHealt;
-	
+	public int speed;
+	public float Range;
 	public GameObject HealthCont;
 	public GameObject Coins;
 	public float num;
 	public Transform Player;
+
+	public GameObject Parent;
 	
 	public RaycastHit2D[] hits;
 
@@ -46,6 +49,20 @@ public class EnemyRay : MonoBehaviour {
 		Vector2 direction = new Vector2 (Player.position.x - transform.position.x, Player.position.y - transform.position.y);
 		float rotation = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
 		this.transform.eulerAngles = new Vector3 (0, 0, rotation);
+
+
+		if (Range >= 1f) {
+			Parent.transform.position = Vector2.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
+		}
+		if (Range <= 1f) {
+		
+			Player.GetComponent<PlayerLogic>().setDamage(4);
+			Destroy(Parent);
+		
+		}
+		Range = Vector2.Distance (transform.position, Player.position);
+		
+
 
 
 	}
