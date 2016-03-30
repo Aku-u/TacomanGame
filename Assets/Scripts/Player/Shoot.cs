@@ -104,6 +104,7 @@ public class Shoot : MonoBehaviour
 				M4.enabled = false;
 				Ray.enabled = true;
 				Gun.enabled = false;
+				RayGun.SetActive (true);
 				Gunsprite.sprite = RayS;
 				GunType = 2;
 			}

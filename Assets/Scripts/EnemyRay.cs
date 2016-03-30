@@ -22,6 +22,11 @@ public class EnemyRay : MonoBehaviour {
 	
 	public GameObject Enemy;
 	// Update is called once per frame
+	void Start(){
+	
+		Range = Vector2.Distance (transform.position, Player.position);
+	
+	}
 
 	void Update () {
 		Raycasting ();
@@ -53,8 +58,8 @@ public class EnemyRay : MonoBehaviour {
 		this.transform.eulerAngles = new Vector3 (0, 0, rotation);
 
 
-		if (Range >= 1f) {
-			Parent.transform.position = Vector2.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
+		if ((Range >= 1f)&& (Range <= 8)) {
+			Parent.transform.position = Vector3.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
 		}
 		if (Range <= 1f) {
 		
