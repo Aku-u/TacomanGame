@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour {
 	public enum GameStates{START,GAME,GAMEOVER,VICTORY,RESTART,PAUSE,GOOD}
 	public GameStates state;
 
+	public Canvas Pause;
+
+	public Button Resume;
+
+	public Button Quit;
+
 
 	// PLAYER LOGIC
 	private PlayerLogic playerLogic;
@@ -24,6 +30,9 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+		Pause.enabled = false;
+		Resume.enabled = false;
+		Quit.enabled = false;
 		currentLevel = Application.loadedLevel;
 		
 		// BUSCO EL PLAYER MEDIANTE EL TAG "Player"
@@ -85,6 +94,11 @@ public class GameManager : MonoBehaviour {
 	private void GameBehaviour(){
 		// SI APRETAMOS LA TECLA P SE PAUSA
 		if (Input.GetKeyDown (KeyCode.P)) {
+
+			Pause.enabled = true;
+			Resume.enabled = true;
+			Quit.enabled = true;
+
 			setPause();
 		}
 
@@ -94,6 +108,10 @@ public class GameManager : MonoBehaviour {
 	private void PauseBehaviour(){
 		// SI APRETAMOS LA TECLA P --> RESUME GAME
 		if (Input.GetKeyDown (KeyCode.P)) {
+
+			Pause.enabled = false;
+			Resume.enabled = false;
+			Quit.enabled = false;
 			setGame();
 		}
 		
@@ -143,6 +161,10 @@ public class GameManager : MonoBehaviour {
 	public void setGame(){
 		// EL TIEMPO SE ESTABLECE
 		Time.timeScale = 1;
+
+		Pause.enabled = false;
+		Resume.enabled = false;
+		Quit.enabled = false;
 		
 		// ACTIVAMOS LOS CONTROLES DEL PLAYER
 		playerLogic.ActiveControlPlayer ();
@@ -153,9 +175,14 @@ public class GameManager : MonoBehaviour {
 	public void setPause(){
 		// DESACTIVAMOS LOS CONTROLES DEL PLAYER
 		playerLogic.DesActiveControlPlayer ();
-		
+
+
+		Resume.enabled = true;
+		Quit.enabled = true;
 		// PARAMOS EL TIEMPO
 		Time.timeScale = 0;
+
+
 		
 		state = GameStates.PAUSE;
 	}

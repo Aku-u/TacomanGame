@@ -28,6 +28,7 @@ public class PlayerLogic : MonoBehaviour {
 
 	public Image Gameover;
 	public Button Restart;
+
 	public Button Quit;
 	public Canvas GameOver;
 
@@ -46,6 +47,7 @@ public class PlayerLogic : MonoBehaviour {
 		GameOver.enabled = false;
 		Gameover.enabled = false;
 		Restart.enabled = false;
+
 		Quit.enabled = false;
 		setAwake ();
 	}
