@@ -12,7 +12,7 @@ public class EnemyRay : MonoBehaviour {
 	public float num;
 
 	public GameObject Player;
-
+	public GameObject Explosion;
 	public GameObject Parent;
 	
 	public RaycastHit2D[] hits;
@@ -92,7 +92,8 @@ public class EnemyRay : MonoBehaviour {
 		enemy = GameObject.FindGameObjectsWithTag("Enemy1");
 		// CUANDO VIDA LLEGA A CERO --> DIE()
 		if (health <= 0) {
-			
+
+			Instantiate (Explosion, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 			num= Random.Range(0,100);
 			if(num >= 80){
 				

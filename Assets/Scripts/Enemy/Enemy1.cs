@@ -11,6 +11,8 @@ public class Enemy1 : MonoBehaviour {
 	public Transform target; 
 	public GameObject trans;
 
+	public GameObject Explosion;
+
 	public CircleCollider2D detection;
 
 	public bool Active;
@@ -45,7 +47,8 @@ public class Enemy1 : MonoBehaviour {
 		enemy = GameObject.FindGameObjectsWithTag("Enemy1");
 		// CUANDO VIDA LLEGA A CERO --> DIE()
 		if (health <= 0) {
-		
+
+			Instantiate (Explosion, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 			num= Random.Range(0,100);
 			if(num >= 80){
 
