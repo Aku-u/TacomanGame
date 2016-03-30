@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 494b765ec3ed149cba6c37b17a788ef8
+timeCreated: 1459320404
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rayolase_0
+    21300002: rayolase_1
+    21300004: rayolase_2
+    21300006: rayolase_3
+    21300008: rayolase_4
+    21300010: rayolase_5
+    21300012: rayolase_6
+    21300014: rayolase_7
+    21300016: rayolase_8
+    21300018: rayolase_9
+    21300020: rayolase_10
+    21300022: rayolase_11
+    21300024: rayolase_12
+    21300026: rayolase_13
+    21300028: rayolase_14
+    21300030: rayolase_15
+    21300032: rayolase_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rayolase_1
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 928
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 1200
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_12
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 694
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 1200
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_14
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 448
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 1200
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rayolase_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 1200
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

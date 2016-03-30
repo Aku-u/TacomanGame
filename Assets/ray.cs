@@ -64,6 +64,13 @@ public class ray : MonoBehaviour {
 
 
 			}
+			if (hit.transform.tag == "EnemyRay")
+			{
+				
+				enemy = hit.transform.position;
+				
+				
+			}
 			if (hit.transform.tag == "Border")
 			{
 				
@@ -110,6 +117,15 @@ public class ray : MonoBehaviour {
 
 				Debug.Log("esta mas cerca");
 			
+			}
+			if((Vector2.Distance(Sourcebullet.position, enemy) <= Vector2.Distance(Sourcebullet.position, other))&&(hit.transform.tag == "EnemyRay")){
+				
+				enemyG = hit.transform.parent.gameObject;
+				
+				Spooted = true;
+				
+				Debug.Log("esta mas cerca");
+				
 			}
 
 

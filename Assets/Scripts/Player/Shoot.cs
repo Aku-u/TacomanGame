@@ -10,12 +10,17 @@ public class Shoot : MonoBehaviour
 
 	public SpriteRenderer Gunsprite;
 
+	public Animator RaygunA;
+
+
 	public Sprite GunS;
 	public Sprite M4S;
 	public Sprite RayS;
 
 	public GameObject RayGun;
 
+	private int RayCounter;
+	private bool RayBool;
 
 
 	public float bulletsGun;
@@ -121,9 +126,27 @@ public class Shoot : MonoBehaviour
 				}
 				bulletsRay --;
 				ratioShootRay = ratioShootRay2;
+
+				RaygunA.SetBool("Shoot",true);
+				RayBool = true;
 			} else if (ratioShootRay >= 0) {
 				ratioShootRay -= Time.deltaTime;
 			}
+			if(RayBool){
+
+				RayCounter ++;
+
+				if(RayCounter >=15){
+
+
+					RaygunA.SetBool("Shoot",false);
+					RayCounter = 0;
+					RayBool = false;
+				}
+
+			}
+
+
 
 		
 			if(Input.GetKeyDown(KeyCode.Alpha1)){

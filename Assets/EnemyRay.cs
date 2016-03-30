@@ -22,11 +22,13 @@ public class EnemyRay : MonoBehaviour {
 	
 	public GameObject Enemy;
 	// Update is called once per frame
+
 	void Update () {
 		Raycasting ();
 	}
 	void Raycasting(){
 	
+		Player = GameObject.FindGameObjectWithTag ("Player").transform;
 		Debug.DrawRay (transform.position , Player.position - transform.position);
 		
 		hits = Physics2D.RaycastAll(transform.position , Player.position - transform.position);
