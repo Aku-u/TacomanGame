@@ -10,7 +10,8 @@ public class EnemyRay : MonoBehaviour {
 	public GameObject HealthCont;
 	public GameObject Coins;
 	public float num;
-	public Transform Player;
+
+	public GameObject Player;
 
 	public GameObject Parent;
 	
@@ -24,42 +25,54 @@ public class EnemyRay : MonoBehaviour {
 	// Update is called once per frame
 	void Start(){
 	
-		Range = Vector2.Distance (transform.position, Player.position);
-	
+		Player = GameObject.FindGameObjectWithTag("Player");
+		Range = Vector2.Distance (transform.position, Player.transform.position);
+
+
 	}
 
 	void Update () {
-		Raycasting ();
+		//Raycasting ();
+
+		Range = Vector2.Distance (transform.position, Player.transform.position);
+
+		if (Range <= 10) {
+		
+
+			Debug.DrawRay (transform.position , Player.transform.position - transform.position);
+			
+			hits = Physics2D.RaycastAll(transform.position , Player.transform.position - transform.position);
+			
+			foreach (RaycastHit2D hit in hits) {
+				
+				Debug.Log(hit.transform.tag);
+				if(hit.transform.tag =="Border")
+					break;
+				if(hit.transform.tag == "Player")
+				{
+					Debug.Log("te voy a matar");
+					FollowPlayer();
+				}
+			}
+		
+		}
+
 	}
 	void Raycasting(){
 	
-		Player = GameObject.FindGameObjectWithTag ("Player").transform;
-		Debug.DrawRay (transform.position , Player.position - transform.position);
-		
-		hits = Physics2D.RaycastAll(transform.position , Player.position - transform.position);
 
-		foreach (RaycastHit2D hit in hits) {
-		
-			Debug.Log(hit.transform.tag);
-			if(hit.transform.tag =="Border")
-				break;
-			if(hit.transform.tag == "Player")
-			{
-				Debug.Log("te voy a matar");
-				FollowPlayer();
-			}
-		}
+
 	
 	}
 	void FollowPlayer(){
 
-		Vector2 direction = new Vector2 (Player.position.x - transform.position.x, Player.position.y - transform.position.y);
+		Vector2 direction = new Vector2 (Player.transform.position.x - transform.position.x, Player.transform.position.y - transform.position.y);
 		float rotation = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
 		this.transform.eulerAngles = new Vector3 (0, 0, rotation);
 
 
 		if ((Range >= 1f)&& (Range <= 8)) {
-			Parent.transform.position = Vector3.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
+			Parent.transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, speed * Time.deltaTime);
 		}
 		if (Range <= 1f) {
 		
@@ -67,7 +80,7 @@ public class EnemyRay : MonoBehaviour {
 			Destroy(Parent);
 		
 		}
-		Range = Vector2.Distance (transform.position, Player.position);
+		Range = Vector2.Distance (transform.position, Player.transform.position);
 		
 
 
