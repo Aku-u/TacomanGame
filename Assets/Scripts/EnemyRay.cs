@@ -50,7 +50,7 @@ public class EnemyRay : MonoBehaviour {
 					break;
 				if(hit.transform.tag == "Player")
 				{
-					Debug.Log("te voy a matar");
+
 					FollowPlayer();
 				}
 			}
@@ -77,6 +77,7 @@ public class EnemyRay : MonoBehaviour {
 		if (Range <= 1f) {
 		
 			Player.GetComponent<PlayerLogic>().setDamage(4);
+			Instantiate (Explosion, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 			Destroy(Parent);
 		
 		}
