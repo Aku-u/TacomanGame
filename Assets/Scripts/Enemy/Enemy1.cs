@@ -50,14 +50,33 @@ public class Enemy1 : MonoBehaviour {
 
 			Instantiate (Explosion, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 			num= Random.Range(0,100);
-			if(num >= 80){
+			if(num >= 90){
 
 				Instantiate (HealthCont, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 
 			}
-			else if(num <= 30){
-				Instantiate (Coins, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
-
+			if(num <= 30){
+				Instantiate (Coins, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.Euler(0, 0, num * 20));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 100), transform.position.y + (num / 90),-0.36F), Quaternion.Euler(0, 0, num * 10));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 90), transform.position.y + (num / 80),-0.36F), Quaternion.Euler(0, 0, num * 4));
+				Instantiate (Coins, new Vector3(transform.position.x - (num / 110), transform.position.y - (num / 110),-0.36F), Quaternion.Euler(0, 0, num * 7));
+				
+			}
+			else if(num <= 60){
+				Instantiate (Coins, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.Euler(0, 0, 50));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 90), transform.position.y + (num / 90),-0.36F), Quaternion.Euler(0, 0, num * 3));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 100), transform.position.y - (num / 120),-0.36F), Quaternion.Euler(0, 0, num * 1));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 110), transform.position.y + (num / 100),-0.36F), Quaternion.Euler(0, 0, num * 10));
+				Instantiate (Coins, new Vector3(transform.position.x - (num / 110), transform.position.y - (num / 100),-0.36F), Quaternion.Euler(0, 0, num * 200));
+			}
+			else if(num <= 80){
+				Instantiate (Coins, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.Euler(0, 0, 180));
+				Instantiate (Coins, new Vector3(transform.position.x - (num / 120), transform.position.y - (num / 120),-0.36F), Quaternion.Euler(0, 0, num * 20));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 80), transform.position.y + (num / 100),-0.36F), Quaternion.Euler(0, 0, num * 17));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 90), transform.position.y - (num / 110),-0.36F), Quaternion.Euler(0, 0, num * 10));
+				Instantiate (Coins, new Vector3(transform.position.x + (num / 80), transform.position.y + (num / 90),-0.36F), Quaternion.Euler(0, 0, num));
+				Instantiate (Coins, new Vector3(transform.position.x - (num / 130), transform.position.y - (num / 130),-0.36F), Quaternion.Euler(0, 0, num * 10));
+				
 			}
 			if (enemy.Length == 1) {
 				Debug.Log("Solo quedas tuu");
