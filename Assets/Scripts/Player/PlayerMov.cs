@@ -13,33 +13,47 @@ public class PlayerMov : MonoBehaviour {
 
 	public Rigidbody2D rigidBody2D;
 
+	public PlayerLogic playerLogic;
+
+	public GameObject SourceBulltet;
+
+	public bool Die;
+
 	void Start()
 	{
-
+		Die = false;
 	}
 	void Update () {
 	
 
+		if (!Die) {	
+			moveY = Input.GetAxis ("Vertical");
+			// Movement
+			rigidBody2D.velocity = new Vector2 (moveY * speed, rigidBody2D.velocity.y);
+
+			moveX = Input.GetAxis ("Horizontal");
+			// Movement
+			rigidBody2D.velocity = new Vector2 (moveX * speed, rigidBody2D.velocity.x);
+
+			if ((moveX != 0) || (moveY != 0)) {
+			
+				moving = true;
+				Graphics.SetBool ("IsMoving", true);
+
+			}
+			if ((moveX == 0) && (moveY == 0)) {
 				
-		moveY = Input.GetAxis ("Vertical");
-		// Movement
-		rigidBody2D.velocity = new Vector2 (moveY * speed, rigidBody2D.velocity.y);
+				moving = false;
+				Graphics.SetBool ("IsMoving", false);
+				
+			}
 
-		moveX = Input.GetAxis ("Horizontal");
-		// Movement
-		rigidBody2D.velocity = new Vector2 (moveX * speed, rigidBody2D.velocity.x);
-
-		if ((moveX != 0) || (moveY != 0)) {
+		} 
+		if (playerLogic.health == 0) {
 		
-			moving = true;
-			Graphics.SetBool("IsMoving",true);
-
-		}
-		if ((moveX == 0) && (moveY == 0)) {
-			
-			moving = false;
-			Graphics.SetBool("IsMoving",false);
-			
+			SourceBulltet.SetActive(false);
+			Die = true;
+			Graphics.SetBool ("IsDie", true);
 		}
 	}
 

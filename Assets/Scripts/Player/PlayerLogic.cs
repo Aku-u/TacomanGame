@@ -171,6 +171,8 @@ public class PlayerLogic : MonoBehaviour {
 
 		health = 0;
 
+
+
 		Gameover.enabled = true;
 
 		gameLogic.setGameOver ();
