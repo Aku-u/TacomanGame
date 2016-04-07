@@ -22,6 +22,9 @@ public class EnemyRay : MonoBehaviour {
 	public GameObject nextLevel;
 	
 	public GameObject Enemy;
+
+	public GameObject EnemyDeath;
+
 	// Update is called once per frame
 	void Start(){
 	
@@ -64,6 +67,7 @@ public class EnemyRay : MonoBehaviour {
 						
 						Player.GetComponent<PlayerLogic>().setDamage(4);
 						Instantiate (Explosion, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
+						Instantiate (EnemyDeath, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 						Destroy(Parent);
 						
 					}
@@ -140,6 +144,7 @@ public class EnemyRay : MonoBehaviour {
 				Instantiate (nextLevel, new Vector3(transform.position.x, transform.position.y,0), Quaternion.identity);
 				
 			}
+			Instantiate (EnemyDeath, new Vector3(transform.position.x, transform.position.y,-0.36F), Quaternion.identity);
 			Destroy(Enemy);
 		}
 		

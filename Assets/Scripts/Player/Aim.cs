@@ -23,10 +23,15 @@ public class Aim : MonoBehaviour {
 
 	public Vector2 newSacaleRay;
 
+	public Texture2D Point;
+
 	void Start(){
 
+		//Cursor.visible = false;
 
 		facingRight = true;
+
+
 	}
 
 	void FixedUpdate(){
@@ -37,6 +42,7 @@ public class Aim : MonoBehaviour {
 
 		transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
 
+		Cursor.SetCursor(Point, new Vector2(mousePos.x + (Point.height/2), mousePos.y + (Point.height/2)), CursorMode.Auto);
 
 		rotationz = Trans.eulerAngles.z;
 

@@ -21,9 +21,10 @@ public class Assignator : MonoBehaviour {
 		
 		Debug.Log(Num);
 		distance =Vector2.Distance(transform.position,Vector2.zero);
-		if (distance >= 7.5) {
+		if (distance >= 8) {
 				
-			if (Num <= NextLevel.levelDificulty-2) {
+			//if (Num <= NextLevel.levelDificulty-2) {
+			if (Num <= 80) {
 
 				Num = Random.Range (1, 3);
 				if(Num == 1)	Instantiate (Enemy, new Vector3 (transform.position.x, transform.position.y, -0.36f), Quaternion.identity);
